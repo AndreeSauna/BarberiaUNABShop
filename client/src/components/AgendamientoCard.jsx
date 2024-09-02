@@ -20,11 +20,15 @@ function AgendamientoCard({ agendamiento }) {
     }
   }, [agendamiento]);
 
+
+  
+
   return (
     <div className="bg-zinc-800 w-full p-6 rounded-md shadow-md flex relative">
       {/* Contenedor de información */}
       <div className="flex-1 pr-24">
         <div className="mb-4">
+          {/* Información del agendamiento */}
           <h1 className="text-2xl font-bold">Barbero:</h1>
           <p className="text-xl font-bold text-white mb-4">{agendamiento.barber}</p>
           <h1 className="text-2xl font-bold">Hora:</h1>

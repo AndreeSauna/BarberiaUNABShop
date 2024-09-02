@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation  } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import image from "../assets/image";
 import { FaShoppingCart } from "react-icons/fa";
@@ -9,10 +9,8 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation(); // Hook para obtener la ubicación actual
 
-
   // Función para verificar si el enlace está activo
   const isActive = (path) => location.pathname === path;
-
 
   return (
     <nav className="bg-zinc-700 my-3 flex flex-col lg:flex-row lg:items-center lg:justify-between py-5 px-10 rounded-lg shadow-lg">
@@ -58,7 +56,7 @@ function Navbar() {
               <Link
                 to="/nosotros"
                 className={`${
-                  isActive('/nosotros') ? 'bg-indigo-500' : 'bg-zinc-700'
+                  isActive("/nosotros") ? "bg-indigo-500" : "bg-zinc-700"
                 } text-white px-4 py-2 rounded-full border-2 border-indigo-500 hover:bg-indigo-600 transition duration-300`}
               >
                 Nosotros
@@ -89,7 +87,7 @@ function Navbar() {
                 //to="/appointments"
                 to="/agendamientos"
                 className={`${
-                  isActive('/agendamientos') ? 'bg-indigo-500' : 'bg-zinc-700'
+                  isActive("/agendamientos") ? "bg-indigo-500" : "bg-zinc-700"
                 } text-white px-4 py-2 rounded-full border-2 border-indigo-500 hover:bg-indigo-600 transition duration-300`}
               >
                 Agendamientos
@@ -110,14 +108,15 @@ function Navbar() {
 
             */}
 
-
             {user?.email !== "admin@gmail.com" && (
               <li>
                 <Link
                   to="/add-agendamiento"
                   //className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300"
                   className={`${
-                    isActive('/add-agendamiento') ? 'bg-green-500' : 'bg-zinc-700'
+                    isActive("/add-agendamiento")
+                      ? "bg-green-500"
+                      : "bg-zinc-700"
                   } text-white px-4 py-2 rounded-full border-2 border-green-600 hover:bg-green-600 transition duration-300`}
                 >
                   Agendar Cita
@@ -154,20 +153,18 @@ function Navbar() {
               <Link
                 to="/nosotros"
                 className={`${
-                  isActive('/nosotros') ? 'bg-indigo-500' : 'bg-zinc-700'
+                  isActive("/nosotros") ? "bg-indigo-500" : "bg-zinc-700"
                 } text-white px-4 py-2 rounded-full border-2 border-indigo-500 hover:bg-indigo-600 transition duration-300`}
               >
                 Nosotros
               </Link>
             </li>
 
-            
-
             <li>
               <Link
                 to="/login"
                 className={`${
-                  isActive('/login') ? 'bg-indigo-500' : 'bg-zinc-700'
+                  isActive("/login") ? "bg-indigo-500" : "bg-zinc-700"
                 } text-white px-4 py-2 rounded-full border-2 border-indigo-500 hover:bg-indigo-600 transition duration-300`}
               >
                 Acceso Clientes
@@ -178,24 +175,26 @@ function Navbar() {
               <Link
                 to="/register"
                 className={`${
-                  isActive('/add-agendamiento') ? 'bg-green-500' : 'bg-zinc-700'
-                } text-white px-4 py-2 rounded-full border-2 border-green-600 hover:bg-green-600 transition duration-300`}
+                  isActive("/register") ? "bg-green-500" : "bg-zinc-700"
+                } text-white px-4 py-2 rounded-full border-2 border-green-500 hover:bg-green-600 transition duration-300`}
               >
                 Registrarse
               </Link>
             </li>
           </>
         )}
+
         <li>
           <Link
             to="/product"
             className={`${
-              isActive('/product') ? 'bg-indigo-500' : 'bg-zinc-700'
+              isActive("/product") ? "bg-indigo-500" : "bg-zinc-700"
             } text-white px-4 py-2 rounded-full border-2 border-indigo-500 hover:bg-indigo-600 transition duration-300`}
           >
             Productos
           </Link>
         </li>
+        {/* 
         <li>
           <Link
             to="/cart"
@@ -205,6 +204,7 @@ function Navbar() {
             Carrito
           </Link>
         </li>
+        */}
       </ul>
     </nav>
   );
